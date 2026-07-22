@@ -1,0 +1,48 @@
+import type { Metadata } from "next";
+import { Cormorant_Garamond, Inter } from "next/font/google";
+import "./globals.css";
+import { SiteHeader } from "@/components/layout/site-header";
+import { SiteFooter } from "@/components/layout/site-footer";
+import { Toaster } from "@/components/ui/sonner";
+
+const cormorant = Cormorant_Garamond({
+  variable: "--font-cormorant",
+  subsets: ["latin", "vietnamese"],
+  weight: ["400", "500", "600", "700"],
+  display: "swap",
+});
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin", "vietnamese"],
+  display: "swap",
+});
+
+export const metadata: Metadata = {
+  title: {
+    default: "Wedding Decor by TIFF",
+    template: "%s | TIFF",
+  },
+  description:
+    "TIFF cung cấp dịch vụ Wedding Decor cho tiệc cưới khách sạn, lễ cưới ngoài trời và lễ gia tiên. Tư vấn concept, tối ưu ngân sách, setup và giám sát hiện trường.",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html
+      lang="vi"
+      className={`${cormorant.variable} ${inter.variable} h-full antialiased`}
+    >
+      <body className="min-h-full flex flex-col font-sans">
+        <SiteHeader />
+        <main className="flex-1">{children}</main>
+        <SiteFooter />
+        <Toaster />
+      </body>
+    </html>
+  );
+}
