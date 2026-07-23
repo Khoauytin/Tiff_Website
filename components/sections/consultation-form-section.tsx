@@ -42,7 +42,10 @@ export function ConsultationFormSection({
         />
 
         <Form {...form}>
-          <form onSubmit={onSubmit} className="mt-10 grid gap-6 sm:grid-cols-2">
+          <form
+            onSubmit={onSubmit}
+            className="mt-10 grid gap-6 rounded-[2rem] border border-border bg-card p-6 shadow-sm sm:grid-cols-2 sm:p-10"
+          >
             {content.fields.map((field) => (
               <FormField
                 key={field.name}

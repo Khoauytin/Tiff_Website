@@ -50,6 +50,7 @@ export const hotelWeddingContent: ServicePageContent = {
     rows: [
       {
         name: "Modern Wedding",
+        imageKey: "hotel-modern",
         cells: [
           "Dưới 120 triệu",
           "Cặp đôi muốn decor tinh tế, gọn gàng, kiểm soát ngân sách",
@@ -59,6 +60,7 @@ export const hotelWeddingContent: ServicePageContent = {
       },
       {
         name: "Trendy Wedding",
+        imageKey: "hotel-trendy",
         cells: [
           "120–250 triệu",
           "Cặp đôi muốn concept rõ, nhiều khu vực đồng bộ hơn",
@@ -68,6 +70,7 @@ export const hotelWeddingContent: ServicePageContent = {
       },
       {
         name: "L'amour Wedding",
+        imageKey: "hotel-lamour",
         cells: [
           "250–500 triệu",
           "Cặp đôi chú trọng cảm xúc, hình ảnh và trải nghiệm khách mời",
@@ -77,6 +80,7 @@ export const hotelWeddingContent: ServicePageContent = {
       },
       {
         name: "Signature Luxury",
+        imageKey: "hotel-signature",
         cells: [
           "Trên 500 triệu",
           "Lễ cưới cao cấp, yêu cầu concept riêng và tiêu chuẩn thi công cao",

@@ -1,3 +1,5 @@
+import { Sparkle } from "lucide-react";
+
 import type { InfoTableContent } from "@/content/types";
 import { SectionHeading } from "@/components/common/section-heading";
 import { RevealGroup, RevealItem } from "@/components/motion/reveal";
@@ -11,20 +13,25 @@ export function InfoTableSection({
 }) {
   return (
     <section id={id} className="border-b border-border">
-      <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-5xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeading eyebrow={content.eyebrow} title={content.title} />
-        <RevealGroup as="dl" className="mt-10 divide-y divide-border">
+        <RevealGroup className="mt-10 grid gap-4 sm:grid-cols-2">
           {content.rows.map((row) => (
             <RevealItem
               key={row.left}
-              className="grid gap-1.5 py-5 sm:grid-cols-[minmax(0,280px)_1fr] sm:gap-8 sm:py-6"
+              className="flex gap-4 rounded-2xl border border-border bg-card p-5 shadow-sm"
             >
-              <dt className="font-display text-lg text-foreground">
-                {row.left}
-              </dt>
-              <dd className="leading-relaxed text-muted-foreground">
-                {row.right}
-              </dd>
+              <span className="flex size-9 shrink-0 items-center justify-center rounded-full bg-secondary text-primary">
+                <Sparkle className="size-4" />
+              </span>
+              <div className="flex flex-col gap-1">
+                <p className="font-display text-lg leading-snug text-foreground">
+                  {row.left}
+                </p>
+                <p className="text-sm leading-relaxed text-muted-foreground">
+                  {row.right}
+                </p>
+              </div>
             </RevealItem>
           ))}
         </RevealGroup>

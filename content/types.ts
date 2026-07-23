@@ -35,6 +35,7 @@ export type InfoTableContent = {
 export type ComparisonRow = {
   name: string;
   cells: string[];
+  imageKey?: ImageKey;
 };
 
 export type ComparisonTableContent = {

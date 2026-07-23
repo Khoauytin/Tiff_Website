@@ -3,9 +3,7 @@ import type { Metadata } from "next";
 import { hotelWeddingContent } from "@/content/pages/hotel-wedding";
 import { HeroSection } from "@/components/sections/hero-section";
 import { InfoTableSection } from "@/components/sections/info-table-section";
-import { ComparisonTableSection } from "@/components/sections/comparison-table-section";
-import { MatrixTableSection } from "@/components/sections/matrix-table-section";
-import { CtaTableSection } from "@/components/sections/cta-table-section";
+import { PackageShowcaseSection } from "@/components/sections/package-showcase-section";
 import { FaqSection } from "@/components/sections/faq-section";
 import { ConsultationFormSection } from "@/components/sections/consultation-form-section";
 
@@ -21,10 +19,13 @@ export default function HotelWeddingDecorPage() {
     <>
       <HeroSection content={c.hero} />
       <InfoTableSection content={c.fitTable} />
-      <ComparisonTableSection id="package" content={c.comparisonTable} />
-      <MatrixTableSection content={c.matrixTable} />
+      <PackageShowcaseSection
+        id="package"
+        comparisonTable={c.comparisonTable}
+        matrixTable={c.matrixTable}
+        ctaTable={c.ctaTable}
+      />
       <InfoTableSection content={c.advisoryTable} />
-      <CtaTableSection content={c.ctaTable} />
       <FaqSection content={c.faq} />
       <ConsultationFormSection content={c.consultationForm} />
     </>

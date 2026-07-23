@@ -81,4 +81,44 @@ export const images: Record<string, ImageEntry> = {
     label: "Chi tiết hoa cưới do TIFF thực hiện",
     aspect: "square",
   },
+  "hotel-modern": {
+    placeholder: true,
+    label: "Modern Wedding — sân khấu tối giản, có điểm nhấn",
+    aspect: "square",
+  },
+  "hotel-trendy": {
+    placeholder: true,
+    label: "Trendy Wedding — không gian nổi bật, phong cách riêng",
+    aspect: "square",
+  },
+  "hotel-lamour": {
+    placeholder: true,
+    label: "L'amour Wedding — sang trọng, lãng mạn, cá nhân hóa",
+    aspect: "square",
+  },
+  "hotel-signature": {
+    placeholder: true,
+    label: "Signature Luxury — độc quyền, thiết kế riêng",
+    aspect: "square",
+  },
+  "outdoor-elegant": {
+    placeholder: true,
+    label: "Elegant Wedding — thanh lịch, hài hòa cảnh quan",
+    aspect: "square",
+  },
+  "outdoor-inspiration": {
+    placeholder: true,
+    label: "Inspiration Wedding — concept cá nhân hóa theo câu chuyện riêng",
+    aspect: "square",
+  },
+  "traditional-sweet-home": {
+    placeholder: true,
+    label: "Sweet Home — trẻ trung, tươi sáng, ngọt ngào",
+    aspect: "square",
+  },
+  "traditional-bliss-home": {
+    placeholder: true,
+    label: "Bliss Home — trang nhã, ấm cúng, tinh tế",
+    aspect: "square",
+  },
 };

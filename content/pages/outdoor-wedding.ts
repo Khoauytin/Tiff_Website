@@ -54,6 +54,7 @@ export const outdoorWeddingContent: ServicePageContent = {
     rows: [
       {
         name: "Elegant Wedding",
+        imageKey: "outdoor-elegant",
         cells: [
           "Cặp đôi thích sự thanh lịch, nhẹ nhàng, ít lỗi thời",
           "Tinh tế, trang nhã, hài hòa với cảnh quan",
@@ -63,6 +64,7 @@ export const outdoorWeddingContent: ServicePageContent = {
       },
       {
         name: "Inspiration Wedding",
+        imageKey: "outdoor-inspiration",
         cells: [
           "Cặp đôi có câu chuyện riêng, nhiều inspiration, muốn dấu ấn cá nhân rõ",
           "Sáng tạo, cảm xúc, cá nhân hóa, linh hoạt theo venue",

@@ -64,6 +64,7 @@ export const traditionalCeremonyContent: ServicePageContent = {
     rows: [
       {
         name: "Sweet Home",
+        imageKey: "traditional-sweet-home",
         cells: [
           "Cặp đôi thích sự trẻ trung, tươi sáng, ngọt ngào",
           "Lãng mạn, mềm mại, vui tươi, có dấu ấn riêng",
@@ -73,6 +74,7 @@ export const traditionalCeremonyContent: ServicePageContent = {
       },
       {
         name: "Bliss Home",
+        imageKey: "traditional-bliss-home",
         cells: [
           "Cặp đôi và gia đình thích sự trang nhã, ấm cúng, tinh tế",
           "Nhẹ nhàng, gọn gàng, hài hòa với không gian nhà",
