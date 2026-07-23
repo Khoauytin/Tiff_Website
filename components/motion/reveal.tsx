@@ -16,7 +16,10 @@ type RevealProps = {
   delay?: number;
 };
 
-/** Fades + rises a block into place the first time it scrolls into view. */
+/**
+ * Fades + rises a block into place every time it scrolls into view (and
+ * reverses when it scrolls back out), so the effect replays on re-scroll.
+ */
 export function Reveal({ children, className, delay = 0 }: RevealProps) {
   return (
     <motion.div
@@ -24,7 +27,7 @@ export function Reveal({ children, className, delay = 0 }: RevealProps) {
       className={className}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once: false, margin: "-80px" }}
       variants={fadeUp}
       transition={{ duration: 0.5, ease: EASE, delay }}
     >
@@ -40,7 +43,10 @@ const stagger: Variants = {
 
 type MotionTag = "div" | "ul" | "ol" | "dl";
 
-/** Wraps a grid/list; each direct `<RevealItem>` child staggers in ~80ms apart. */
+/**
+ * Wraps a grid/list; each direct `<RevealItem>` child staggers in ~80ms
+ * apart, every time the group scrolls into view (replays on re-scroll).
+ */
 export function RevealGroup({
   children,
   className,
@@ -57,7 +63,7 @@ export function RevealGroup({
       className={className}
       initial="hidden"
       whileInView="show"
-      viewport={{ once: true, margin: "-80px" }}
+      viewport={{ once: false, margin: "-80px" }}
       variants={stagger}
     >
       {children}
