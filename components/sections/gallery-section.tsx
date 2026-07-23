@@ -2,6 +2,7 @@ import type { GalleryContent } from "@/content/types";
 import { SectionHeading } from "@/components/common/section-heading";
 import { PlaceholderImage } from "@/components/common/placeholder-image";
 import { Button } from "@/components/ui/button";
+import { RevealGroup, RevealItem } from "@/components/motion/reveal";
 
 const cornerClasses = [
   "rounded-tr-[3rem] rounded-bl-[3rem]",
@@ -24,9 +25,13 @@ export function GallerySection({
           title={content.title}
           align="center"
         />
-        <div className="mt-12 grid gap-6 sm:grid-cols-3">
+        <RevealGroup className="mt-12 grid gap-6 sm:grid-cols-3">
           {content.images.map((image, i) => (
-            <figure key={image.imageKey} className="flex flex-col gap-3">
+            <RevealItem
+              key={image.imageKey}
+              as="figure"
+              className="flex flex-col gap-3"
+            >
               <PlaceholderImage
                 imageKey={image.imageKey}
                 className={cornerClasses[i % cornerClasses.length]}
@@ -34,9 +39,9 @@ export function GallerySection({
               <figcaption className="text-center text-sm text-muted-foreground">
                 {image.caption}
               </figcaption>
-            </figure>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
         {content.cta ? (
           <div className="mt-10 flex justify-center">
             <Button asChild size="lg">

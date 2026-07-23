@@ -1,10 +1,11 @@
 import type { FooterCtaContent } from "@/content/types";
 import { Button } from "@/components/ui/button";
+import { Reveal } from "@/components/motion/reveal";
 
 export function FooterCtaSection({ content }: { content: FooterCtaContent }) {
   return (
     <section className="bg-secondary">
-      <div className="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 lg:px-8">
+      <Reveal className="mx-auto max-w-3xl px-4 py-20 text-center sm:px-6 lg:px-8">
         <h2 className="font-display text-3xl font-semibold leading-tight text-foreground sm:text-5xl">
           {content.title}
         </h2>
@@ -20,7 +21,7 @@ export function FooterCtaSection({ content }: { content: FooterCtaContent }) {
             </Button>
           ) : null}
         </div>
-      </div>
+      </Reveal>
     </section>
   );
 }

@@ -4,6 +4,7 @@ import { ArrowRight } from "lucide-react";
 import type { ServiceCardsContent } from "@/content/types";
 import { SectionHeading } from "@/components/common/section-heading";
 import { PlaceholderImage } from "@/components/common/placeholder-image";
+import { RevealGroup, RevealItem } from "@/components/motion/reveal";
 
 export function ServiceCardsSection({
   content,
@@ -20,36 +21,34 @@ export function ServiceCardsSection({
           title={content.title}
           align="center"
         />
-        <div className="mt-12 grid gap-8 sm:grid-cols-3">
+        <RevealGroup className="mt-12 grid gap-8 sm:grid-cols-3">
           {content.cards.map((card, i) => (
-            <Link
-              key={card.name}
-              href={card.href}
-              className="group flex flex-col gap-4"
-            >
-              <PlaceholderImage
-                imageKey={card.imageKey}
-                className={
-                  i % 2 === 0
-                    ? "rounded-tr-[3rem] rounded-bl-[3rem]"
-                    : "rounded-tl-[3rem] rounded-br-[3rem]"
-                }
-              />
-              <div className="flex flex-col gap-1.5">
-                <h3 className="font-display text-xl font-semibold text-foreground">
-                  {card.name}
-                </h3>
-                <p className="text-sm leading-relaxed text-muted-foreground">
-                  {card.description}
-                </p>
-                <span className="mt-1 inline-flex items-center gap-1.5 text-sm font-medium text-primary">
-                  Xem chi tiết
-                  <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-                </span>
-              </div>
-            </Link>
+            <RevealItem key={card.name}>
+              <Link href={card.href} className="group flex flex-col gap-4">
+                <PlaceholderImage
+                  imageKey={card.imageKey}
+                  className={
+                    i % 2 === 0
+                      ? "rounded-tr-[3rem] rounded-bl-[3rem]"
+                      : "rounded-tl-[3rem] rounded-br-[3rem]"
+                  }
+                />
+                <div className="flex flex-col gap-1.5">
+                  <h3 className="font-display text-xl font-semibold text-foreground">
+                    {card.name}
+                  </h3>
+                  <p className="text-sm leading-relaxed text-muted-foreground">
+                    {card.description}
+                  </p>
+                  <span className="mt-1 inline-flex items-center gap-1.5 text-sm font-medium text-primary">
+                    Xem chi tiết
+                    <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </div>
+              </Link>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </div>
     </section>
   );

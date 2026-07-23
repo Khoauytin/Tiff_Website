@@ -1,5 +1,6 @@
 import type { ProcessStepsContent } from "@/content/types";
 import { SectionHeading } from "@/components/common/section-heading";
+import { RevealGroup, RevealItem } from "@/components/motion/reveal";
 
 export function ProcessStepsSection({
   content,
@@ -12,9 +13,9 @@ export function ProcessStepsSection({
     <section id={id} className="border-b border-border bg-secondary/20">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeading eyebrow={content.eyebrow} title={content.title} />
-        <ol className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+        <RevealGroup as="ol" className="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {content.steps.map((step) => (
-            <li key={step.number} className="flex gap-4">
+            <RevealItem key={step.number} as="li" className="flex gap-4">
               <span className="font-display text-3xl font-semibold leading-none text-brand-gold">
                 {step.number}
               </span>
@@ -26,9 +27,9 @@ export function ProcessStepsSection({
                   {step.body}
                 </p>
               </div>
-            </li>
+            </RevealItem>
           ))}
-        </ol>
+        </RevealGroup>
       </div>
     </section>
   );

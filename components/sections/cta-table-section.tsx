@@ -3,6 +3,7 @@ import { ArrowRight } from "lucide-react";
 import type { CtaTableContent } from "@/content/types";
 import { SectionHeading } from "@/components/common/section-heading";
 import { Button } from "@/components/ui/button";
+import { RevealGroup, RevealItem } from "@/components/motion/reveal";
 
 export function CtaTableSection({
   content,
@@ -20,9 +21,9 @@ export function CtaTableSection({
             title={content.title ?? ""}
           />
         ) : null}
-        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <RevealGroup className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {content.rows.map((row) => (
-            <div
+            <RevealItem
               key={row.label}
               className="flex flex-col justify-between gap-4 rounded-2xl border border-border bg-card p-6 shadow-sm"
             >
@@ -35,9 +36,9 @@ export function CtaTableSection({
                   <ArrowRight className="size-4" />
                 </a>
               </Button>
-            </div>
+            </RevealItem>
           ))}
-        </div>
+        </RevealGroup>
       </div>
     </section>
   );

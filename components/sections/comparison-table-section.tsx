@@ -1,6 +1,7 @@
 import type { ComparisonTableContent } from "@/content/types";
 import { SectionHeading } from "@/components/common/section-heading";
 import { ScrollableTable } from "@/components/common/data-table";
+import { Reveal } from "@/components/motion/reveal";
 import {
   Table,
   TableBody,
@@ -21,7 +22,7 @@ export function ComparisonTableSection({
     <section id={id} className="border-b border-border bg-secondary/20">
       <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeading eyebrow={content.eyebrow} title={content.title} />
-        <div className="mt-8">
+        <Reveal className="mt-8">
           <ScrollableTable>
             <Table className="min-w-[720px]">
               <TableHeader>
@@ -50,7 +51,7 @@ export function ComparisonTableSection({
               </TableBody>
             </Table>
           </ScrollableTable>
-        </div>
+        </Reveal>
         {content.note ? (
           <p className="mt-4 text-sm italic text-muted-foreground">
             {content.note}

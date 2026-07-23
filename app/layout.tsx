@@ -4,6 +4,7 @@ import "./globals.css";
 import { SiteHeader } from "@/components/layout/site-header";
 import { SiteFooter } from "@/components/layout/site-footer";
 import { Toaster } from "@/components/ui/sonner";
+import { MotionProvider } from "@/components/motion/motion-provider";
 
 const cormorant = Cormorant_Garamond({
   variable: "--font-cormorant",
@@ -38,10 +39,21 @@ export default function RootLayout({
       className={`${cormorant.variable} ${inter.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col font-sans">
-        <SiteHeader />
-        <main className="flex-1">{children}</main>
-        <SiteFooter />
-        <Toaster />
+        {/*
+          Safety net: scroll-reveal content starts at opacity:0 in the static
+          HTML and only animates to visible once framer-motion hydrates. If
+          JS fails to load/run for any reason, this keeps content visible
+          instead of permanently hidden.
+        */}
+        <noscript>
+          <style>{`[data-reveal]{opacity:1 !important;transform:none !important;}`}</style>
+        </noscript>
+        <MotionProvider>
+          <SiteHeader />
+          <main className="flex-1">{children}</main>
+          <SiteFooter />
+          <Toaster />
+        </MotionProvider>
       </body>
     </html>
   );

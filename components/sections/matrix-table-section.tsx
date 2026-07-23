@@ -1,6 +1,7 @@
 import type { MatrixTableContent } from "@/content/types";
 import { SectionHeading } from "@/components/common/section-heading";
 import { ScrollableTable } from "@/components/common/data-table";
+import { Reveal } from "@/components/motion/reveal";
 import {
   Table,
   TableBody,
@@ -26,7 +27,7 @@ export function MatrixTableSection({
             {content.note}
           </p>
         ) : null}
-        <div className="mt-8">
+        <Reveal className="mt-8">
           <ScrollableTable>
             <Table className="min-w-[720px]">
               <TableHeader>
@@ -55,7 +56,7 @@ export function MatrixTableSection({
               </TableBody>
             </Table>
           </ScrollableTable>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

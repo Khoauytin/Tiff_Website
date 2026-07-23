@@ -3,12 +3,13 @@ import { ArrowRight } from "lucide-react";
 import type { HeroContent } from "@/content/types";
 import { Button } from "@/components/ui/button";
 import { PhotoCollage } from "@/components/common/photo-collage";
+import { Reveal } from "@/components/motion/reveal";
 
 export function HeroSection({ content }: { content: HeroContent }) {
   return (
     <section className="bg-background">
       <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-16 lg:py-24 lg:px-8">
-        <div className="flex flex-col gap-6">
+        <Reveal className="flex flex-col gap-6">
           <div className="flex items-center gap-3">
             <span className="gold-rule" />
             <span className="eyebrow">{content.eyebrow}</span>
@@ -34,13 +35,15 @@ export function HeroSection({ content }: { content: HeroContent }) {
               </Button>
             ) : null}
           </div>
-        </div>
-        <PhotoCollage
-          primaryKey={content.imageKey}
-          secondaryKey={content.secondaryImageKey}
-          priority
-          className="w-full"
-        />
+        </Reveal>
+        <Reveal delay={0.15}>
+          <PhotoCollage
+            primaryKey={content.imageKey}
+            secondaryKey={content.secondaryImageKey}
+            priority
+            className="w-full"
+          />
+        </Reveal>
       </div>
     </section>
   );
