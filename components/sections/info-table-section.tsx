@@ -1,11 +1,5 @@
 import type { InfoTableContent } from "@/content/types";
 import { SectionHeading } from "@/components/common/section-heading";
-import {
-  Table,
-  TableBody,
-  TableCell,
-  TableRow,
-} from "@/components/ui/table";
 
 export function InfoTableSection({
   content,
@@ -16,26 +10,25 @@ export function InfoTableSection({
 }) {
   return (
     <section id={id} className="border-b border-border">
-      <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-4xl px-4 py-16 sm:px-6 lg:px-8">
         <SectionHeading eyebrow={content.eyebrow} title={content.title} />
-        <div className="mt-8 overflow-hidden rounded-lg border border-border">
-          <Table>
-            <TableBody>
-              {content.rows.map((row) => (
-                <TableRow key={row.left} className="align-top">
-                  <TableCell className="w-[38%] bg-secondary/40 font-medium text-foreground">
-                    {row.left}
-                  </TableCell>
-                  <TableCell className="text-muted-foreground">
-                    {row.right}
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </div>
+        <dl className="mt-10 divide-y divide-border">
+          {content.rows.map((row) => (
+            <div
+              key={row.left}
+              className="grid gap-1.5 py-5 sm:grid-cols-[minmax(0,280px)_1fr] sm:gap-8 sm:py-6"
+            >
+              <dt className="font-display text-lg text-foreground">
+                {row.left}
+              </dt>
+              <dd className="leading-relaxed text-muted-foreground">
+                {row.right}
+              </dd>
+            </div>
+          ))}
+        </dl>
         {content.note ? (
-          <p className="mt-4 text-sm italic text-muted-foreground">
+          <p className="mt-6 text-sm italic text-muted-foreground">
             {content.note}
           </p>
         ) : null}

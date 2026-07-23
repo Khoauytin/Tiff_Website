@@ -14,21 +14,71 @@ export const images: Record<string, ImageEntry> = {
   "hero-overview": {
     placeholder: true,
     label: "Ảnh hero — cô dâu chú rể tại không gian tiệc cưới TIFF",
-    aspect: "wide",
+    aspect: "portrait",
+  },
+  "hero-overview-secondary": {
+    placeholder: true,
+    label: "Ảnh phụ — chi tiết hoa cưới",
+    aspect: "square",
   },
   "hero-hotel-wedding": {
     placeholder: true,
     label: "Ảnh hero — sân khấu tiệc cưới khách sạn, ballroom sang trọng",
-    aspect: "wide",
+    aspect: "portrait",
+  },
+  "hero-hotel-wedding-secondary": {
+    placeholder: true,
+    label: "Ảnh phụ — bàn tiệc trang trí trong ballroom",
+    aspect: "square",
   },
   "hero-outdoor-wedding": {
     placeholder: true,
     label: "Ảnh hero — lễ cưới ngoài trời, sân vườn, ánh sáng tự nhiên",
-    aspect: "wide",
+    aspect: "portrait",
+  },
+  "hero-outdoor-wedding-secondary": {
+    placeholder: true,
+    label: "Ảnh phụ — lối đi hoa ngoài trời",
+    aspect: "square",
   },
   "hero-traditional-ceremony": {
     placeholder: true,
     label: "Ảnh hero — lễ gia tiên tại tư gia, backdrop truyền thống",
-    aspect: "wide",
+    aspect: "portrait",
+  },
+  "hero-traditional-ceremony-secondary": {
+    placeholder: true,
+    label: "Ảnh phụ — mâm quả và tráp lễ",
+    aspect: "square",
+  },
+  "overview-feature-support": {
+    placeholder: true,
+    label: "Ảnh — đội ngũ TIFF tư vấn cùng cặp đôi",
+    aspect: "portrait",
+  },
+  "overview-feature-why-choose": {
+    placeholder: true,
+    label: "Ảnh — khoảnh khắc cô dâu chú rể trong ngày cưới",
+    aspect: "portrait",
+  },
+  "overview-feature-why-choose-secondary": {
+    placeholder: true,
+    label: "Ảnh phụ — chi tiết trang trí bàn tiệc",
+    aspect: "square",
+  },
+  "gallery-1": {
+    placeholder: true,
+    label: "Không gian tiệc cưới do TIFF thực hiện",
+    aspect: "square",
+  },
+  "gallery-2": {
+    placeholder: true,
+    label: "Lối đi hoa cưới do TIFF thiết kế",
+    aspect: "square",
+  },
+  "gallery-3": {
+    placeholder: true,
+    label: "Chi tiết hoa cưới do TIFF thực hiện",
+    aspect: "square",
   },
 };

@@ -1,4 +1,5 @@
 import type { OverviewPageContent } from "@/content/types";
+import { siteConfig } from "@/content/site";
 
 export const overviewContent: OverviewPageContent = {
   slug: "/",
@@ -15,42 +16,40 @@ export const overviewContent: OverviewPageContent = {
     ctaPrimary: { label: "Nhận tư vấn Wedding Decor", href: "#tu-van" },
     ctaSecondary: { label: "Tìm dịch vụ phù hợp", href: "#dich-vu" },
     imageKey: "hero-overview",
+    secondaryImageKey: "hero-overview-secondary",
   },
-  servicesTable: {
+  serviceCards: {
     eyebrow: "Dịch vụ",
     title: "TIFF cung cấp những dịch vụ Wedding Decor nào?",
-    columns: ["Phù hợp với", "Tinh thần thiết kế", "CTA đề xuất"],
-    rows: [
+    cards: [
       {
         name: "Hotel Wedding Decor",
-        cells: [
-          "Tiệc cưới tại khách sạn, nhà hàng, ballroom",
-          "Sang trọng, đồng bộ, chỉn chu từ sảnh đón khách đến sân khấu",
-          "Khám phá Hotel Wedding",
-        ],
+        description:
+          "Tiệc cưới tại khách sạn, nhà hàng, ballroom — sang trọng, đồng bộ, chỉn chu từ sảnh đón khách đến sân khấu.",
+        imageKey: "hero-hotel-wedding",
+        href: "/hotel-wedding-decor",
       },
       {
         name: "Outdoor Wedding Decor",
-        cells: [
-          "Garden wedding, resort wedding, villa wedding, ceremony ngoài trời",
-          "Tự nhiên, cảm xúc, hài hòa với cảnh quan",
-          "Khám phá Outdoor Wedding",
-        ],
+        description:
+          "Garden wedding, resort wedding, villa wedding, ceremony ngoài trời — tự nhiên, cảm xúc, hài hòa với cảnh quan.",
+        imageKey: "hero-outdoor-wedding",
+        href: "/outdoor-wedding-decor",
       },
       {
         name: "Traditional Ceremony Decor",
-        cells: [
-          "Lễ gia tiên, ăn hỏi, vu quy, thành hôn tại nhà",
-          "Trang trọng, ấm cúng, tinh tế, hài hòa với không gian gia đình",
-          "Khám phá lễ gia tiên",
-        ],
+        description:
+          "Lễ gia tiên, ăn hỏi, vu quy, thành hôn tại nhà — trang trọng, ấm cúng, tinh tế, hài hòa với không gian gia đình.",
+        imageKey: "hero-traditional-ceremony",
+        href: "/traditional-ceremony-decor",
       },
     ],
   },
-  supportTable: {
+  featureSupport: {
     eyebrow: "Đồng hành cùng bạn",
     title: "TIFF hỗ trợ bạn trong những phần nào?",
-    rows: [
+    body: "Từ buổi tư vấn đầu tiên đến khi tháo dỡ sau tiệc, TIFF đồng hành xuyên suốt để mỗi quyết định của bạn đều có cơ sở rõ ràng.",
+    items: [
       {
         left: "Tư vấn định hướng",
         right:
@@ -80,6 +79,54 @@ export const overviewContent: OverviewPageContent = {
           "Điều phối đội setup, kiểm tra chất lượng hiện trường và bàn giao không gian",
       },
     ],
+    imageKey: "overview-feature-support",
+    imageSide: "left",
+  },
+  gallery: {
+    eyebrow: "Thư viện",
+    title: "Không gian TIFF đã thực hiện",
+    images: [
+      { imageKey: "gallery-1", caption: "Không gian tiệc cưới" },
+      { imageKey: "gallery-2", caption: "Lối đi hoa cưới" },
+      { imageKey: "gallery-3", caption: "Chi tiết hoa cưới" },
+    ],
+    cta: { label: "Nhận tư vấn cho không gian của bạn", href: "#tu-van" },
+  },
+  featureWhyChoose: {
+    eyebrow: "Vì sao chọn TIFF",
+    title: "Vì sao chọn TIFF?",
+    body: "Không có công thức chung cho mọi lễ cưới. TIFF lắng nghe trước, đề xuất sau — để mỗi không gian đều mang đúng dấu ấn của cặp đôi.",
+    items: [
+      {
+        left: "Tư vấn theo nhu cầu thật",
+        right: "Không áp dụng một mẫu cố định cho mọi lễ cưới",
+      },
+      {
+        left: "Concept có tính khả thi",
+        right:
+          "Giúp hình ảnh inspiration được điều chỉnh phù hợp với venue thực tế",
+      },
+      {
+        left: "Ngân sách có trọng tâm",
+        right: "Tập trung vào điểm nhấn chính, tránh dàn trải không hiệu quả",
+      },
+      {
+        left: "Quy trình rõ ràng",
+        right:
+          "Giúp cặp đôi hiểu từng bước và an tâm hơn khi chuẩn bị cưới",
+      },
+      {
+        left: "Phối hợp tốt với venue/vendor",
+        right: "Hạn chế rủi ro trong setup và ngày diễn ra sự kiện",
+      },
+      {
+        left: "Chăm chút trải nghiệm khách mời",
+        right: "Không gian cưới đẹp, liền mạch và có cảm xúc",
+      },
+    ],
+    imageKey: "overview-feature-why-choose",
+    secondaryImageKey: "overview-feature-why-choose-secondary",
+    imageSide: "right",
   },
   fitTable: {
     eyebrow: "Dành cho bạn",
@@ -159,39 +206,6 @@ export const overviewContent: OverviewPageContent = {
       },
     ],
   },
-  whyChooseTable: {
-    eyebrow: "Vì sao chọn TIFF",
-    title: "Vì sao chọn TIFF?",
-    columns: ["Lý do", "Giá trị dành cho cô dâu chú rể"],
-    rows: [
-      {
-        left: "Tư vấn theo nhu cầu thật",
-        right: "Không áp dụng một mẫu cố định cho mọi lễ cưới",
-      },
-      {
-        left: "Concept có tính khả thi",
-        right:
-          "Giúp hình ảnh inspiration được điều chỉnh phù hợp với venue thực tế",
-      },
-      {
-        left: "Ngân sách có trọng tâm",
-        right: "Tập trung vào điểm nhấn chính, tránh dàn trải không hiệu quả",
-      },
-      {
-        left: "Quy trình rõ ràng",
-        right:
-          "Giúp cặp đôi hiểu từng bước và an tâm hơn khi chuẩn bị cưới",
-      },
-      {
-        left: "Phối hợp tốt với venue/vendor",
-        right: "Hạn chế rủi ro trong setup và ngày diễn ra sự kiện",
-      },
-      {
-        left: "Chăm chút trải nghiệm khách mời",
-        right: "Không gian cưới đẹp, liền mạch và có cảm xúc",
-      },
-    ],
-  },
   consultationForm: {
     eyebrow: "Bắt đầu",
     title: "Để TIFF tư vấn sát hơn, bạn có thể gửi",
@@ -250,5 +264,13 @@ export const overviewContent: OverviewPageContent = {
     ],
     submitLabel: "Nhận tư vấn Wedding Decor từ TIFF",
     source: "overview",
+  },
+  footerCta: {
+    title: "Đội ngũ Wedding Planner của TIFF sẽ khiến ngày trọng đại của bạn thêm trọn vẹn",
+    ctaPrimary: { label: "Nhận tư vấn miễn phí", href: "#tu-van" },
+    ctaSecondary: {
+      label: `Gọi ${siteConfig.phone}`,
+      href: `tel:${siteConfig.phone.replace(/\s/g, "")}`,
+    },
   },
 };

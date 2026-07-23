@@ -16,6 +16,7 @@ export type HeroContent = {
   ctaPrimary: CtaLink;
   ctaSecondary?: CtaLink;
   imageKey: ImageKey;
+  secondaryImageKey?: ImageKey;
 };
 
 export type InfoTableRow = {
@@ -137,19 +138,69 @@ export type ServicePageContent = {
   consultationForm: ConsultationFormContent;
 };
 
+export type ServiceCard = {
+  name: string;
+  description: string;
+  imageKey: ImageKey;
+  href: string;
+};
+
+export type ServiceCardsContent = {
+  eyebrow: string;
+  title: string;
+  cards: ServiceCard[];
+};
+
+/**
+ * The repeating alternating image/text block. `items` (when present) renders
+ * as a compact tick-list next to the body copy instead of a table — used to
+ * port existing InfoTableRow-shaped content (e.g. "TIFF hỗ trợ" / "Vì sao
+ * chọn TIFF") into the template's narrative style without inventing new copy.
+ */
+export type FeatureContent = {
+  eyebrow: string;
+  title: string;
+  body: string;
+  items?: InfoTableRow[];
+  imageKey: ImageKey;
+  secondaryImageKey?: ImageKey;
+  imageSide: "left" | "right";
+};
+
+export type GalleryImage = {
+  imageKey: ImageKey;
+  caption: string;
+};
+
+export type GalleryContent = {
+  eyebrow: string;
+  title: string;
+  images: GalleryImage[];
+  cta?: CtaLink;
+};
+
+export type FooterCtaContent = {
+  title: string;
+  ctaPrimary: CtaLink;
+  ctaSecondary?: CtaLink;
+};
+
 /**
  * The overview page has its own distinct flow (no package comparison, no
- * matrix, no FAQ — instead a 9-step process and a "why choose TIFF" table),
- * so it gets its own shape rather than being forced into ServicePageContent.
+ * matrix, no FAQ — instead a narrative hero → service cards → feature
+ * highlights → gallery → fit table → process → form → closing CTA), so it
+ * gets its own shape rather than being forced into ServicePageContent.
  */
 export type OverviewPageContent = {
   slug: string;
   seo: PageSeo;
   hero: HeroContent;
-  servicesTable: ComparisonTableContent;
-  supportTable: InfoTableContent;
+  serviceCards: ServiceCardsContent;
+  featureSupport: FeatureContent;
+  gallery: GalleryContent;
+  featureWhyChoose: FeatureContent;
   fitTable: InfoTableContent;
   processSteps: ProcessStepsContent;
-  whyChooseTable: InfoTableContent;
   consultationForm: ConsultationFormContent;
+  footerCta: FooterCtaContent;
 };

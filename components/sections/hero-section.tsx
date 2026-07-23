@@ -2,12 +2,12 @@ import { ArrowRight } from "lucide-react";
 
 import type { HeroContent } from "@/content/types";
 import { Button } from "@/components/ui/button";
-import { PlaceholderImage } from "@/components/common/placeholder-image";
+import { PhotoCollage } from "@/components/common/photo-collage";
 
 export function HeroSection({ content }: { content: HeroContent }) {
   return (
-    <section className="border-b border-border bg-secondary/30">
-      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:py-24 lg:px-8">
+    <section className="bg-background">
+      <div className="mx-auto grid max-w-6xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-16 lg:py-24 lg:px-8">
         <div className="flex flex-col gap-6">
           <div className="flex items-center gap-3">
             <span className="gold-rule" />
@@ -35,7 +35,12 @@ export function HeroSection({ content }: { content: HeroContent }) {
             ) : null}
           </div>
         </div>
-        <PlaceholderImage imageKey={content.imageKey} priority className="w-full" />
+        <PhotoCollage
+          primaryKey={content.imageKey}
+          secondaryKey={content.secondaryImageKey}
+          priority
+          className="w-full"
+        />
       </div>
     </section>
   );

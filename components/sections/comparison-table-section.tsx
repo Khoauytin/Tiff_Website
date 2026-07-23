@@ -26,9 +26,9 @@ export function ComparisonTableSection({
             <Table className="min-w-[720px]">
               <TableHeader>
                 <TableRow>
-                  <TableHead className="w-[220px] bg-card">Hạng mục</TableHead>
+                  <TableHead className="w-[220px] bg-secondary/50">Hạng mục</TableHead>
                   {content.columns.map((col) => (
-                    <TableHead key={col} className="bg-card font-semibold text-foreground">
+                    <TableHead key={col} className="bg-secondary/50 font-semibold text-foreground">
                       {col}
                     </TableHead>
                   ))}

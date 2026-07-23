@@ -24,7 +24,7 @@ export function CtaTableSection({
           {content.rows.map((row) => (
             <div
               key={row.label}
-              className="flex flex-col justify-between gap-4 rounded-lg border border-border bg-card p-6"
+              className="flex flex-col justify-between gap-4 rounded-2xl border border-border bg-card p-6 shadow-sm"
             >
               <p className="text-sm font-semibold text-foreground">
                 {row.label}
